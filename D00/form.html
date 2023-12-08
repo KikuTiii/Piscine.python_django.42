@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+
+<body>
+
+	<form>
+
+		<div>
+			<label for="firstname">firstname</label>
+			<input type="text" name="firstname" id="firstname">
+		</div>
+
+		<div>
+			<label for="surname">surname</label>
+			<input type="text" name="surname" id="surname">
+		</div>
+
+		<div>
+			<label for="age">Age</label>
+			<input type="text" name="age" id="age">
+		</div>
+
+		<div>
+			<label for="Phone">Phone</label>
+			<input type="text" name="Phone" id="Phone">
+		</div>
+
+		<div>
+			<label for="email">email</label>
+			<input type="text" name="email" id="email">
+		</div>
+
+		<div>
+			<label for="student">Student at 42?</label>
+			<input type="checkbox" name="student" id="student">
+		</div>
+
+		<div>
+			<label for="gender_male">Male</label>
+			<input name="gender" value="male" id="gender_male" type="radio" checked>
+
+			<label for="gender_female">Female</label>
+			<input name="gender" value="female" id="gender_female" type="radio">
+
+			<label for="gender">Other</label>
+			<input name="gender" value="other" id="gender_other" type="radio">
+		</div>
+
+		<button type="button" onclick="displayFormContents()">
+			run thax sexy Javascript!
+		</button>
+
+	</form>
+
+	<script>
+
+		function displayFormContents() {
+			const firstname = document.getElementById("firstname").value;
+			const surname = document.getElementById("surname").value;
+			const age = document.getElementById("age").value;
+			const Phone = document.getElementById("Phone").value;
+			const email = document.getElementById("email").value;
+
+			var genderElements = document.getElementsByName("gender");
+			var selectedGender;
+			var i
+			i = 0
+
+			while (i < genderElements.length) {
+				if (genderElements[i].checked) {
+					selectedGender = genderElements[i].value;
+					break;
+				}
+				i++
+			}
+
+			if (selectedGender === "male") {
+				alert(`
+                First Name: ${firstname}
+                Surname: ${surname}
+                Age: ${age}
+                Phone: ${Phone}
+                Gender: ${selectedGender}
+                `);
+			}
+			else if (selectedGender === "female") {
+				alert(`
+                First Name: ${firstname}
+                Surname: ${surname}
+                Age: ${age}
+                Phone: ${Phone}
+                Gender: ${selectedGender}
+                `);
+			}
+			else if (selectedGender === "other") {
+				alert(`
+                First Name: ${firstname}
+                Surname: ${surname}
+                Age: ${age}
+                Phone: ${Phone}
+                Gender: ${selectedGender}
+                `);
+			}
+		}
+	</script>
+
+</body>
+
+</html>
