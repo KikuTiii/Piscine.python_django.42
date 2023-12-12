@@ -18,6 +18,5 @@ def my_var():
     print(var, "has a type", type(var))
     var = set()
 
-
 if __name__ == '__main__':
     my_var()
